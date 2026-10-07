@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = "build/arduino.avr.nano/smart-blind-stick.ino.hex"
+elf = "build/arduino.avr.nano/smart-blind-stick.ino.elf"

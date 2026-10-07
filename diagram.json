@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "author": "Smart Blind Stick",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-nano", "id": "nano", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic",
+      "top": -180.9,
+      "left": 216.7,
+      "attrs": { "distance": "107" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "buzzer",
+      "top": -170.4,
+      "left": 40.2,
+      "attrs": { "volume": "0.1" }
+    },
+    { "type": "wokwi-led", "id": "led", "top": -3.6, "left": 387.8, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-resistor",
+      "id": "resistor",
+      "top": 138.35,
+      "left": 163.2,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "nano:5V", "ultrasonic:VCC", "red", [ "v24", "h162.7" ] ],
+    [ "nano:GND.1", "ultrasonic:GND", "black", [ "v33.6", "h173.5" ] ],
+    [ "nano:9", "ultrasonic:TRIG", "green", [ "v-43.2", "h249.5" ] ],
+    [ "nano:10", "ultrasonic:ECHO", "blue", [ "v-33.6", "h269.1" ] ],
+    [ "nano:3", "buzzer:1", "green", [ "h-0.5", "v-91.2" ] ],
+    [ "nano:GND.2", "buzzer:2", "black", [ "h-0.5", "v-91.2" ] ],
+    [ "nano:4", "resistor:1", "orange", [ "h-0.5", "v139.2" ] ],
+    [ "resistor:2", "led:A", "orange", [] ],
+    [ "nano:GND.1", "led:C", "black", [ "v14.4", "h258.3" ] ]
+  ],
+  "dependencies": {}
+}
